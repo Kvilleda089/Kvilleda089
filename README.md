@@ -81,7 +81,14 @@ UiPath (RPA) · Creatio (BPM)
 
 Plataforma para gestionar reservas de dos canchas deportivas y salones de eventos. La pantalla principal muestra el listado de reservaciones con filtros por cliente, hora, fecha y estado.
 
-**Stack:** Backend en Docker, desplegado en Render · Base de datos en Neon (PostgreSQL)
+Backend desplegado en Render · Base de datos en Neon (PostgreSQL)
+
+<img src="https://img.shields.io/badge/CQRS-4B0082?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
+<img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" />
+
+<br/><br/>
 
 <a href="https://github.com/Kvilleda089/api-reservation">
   <img src="https://img.shields.io/badge/Ver_repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
@@ -111,6 +118,9 @@ Plataforma para gestionar reservas de dos canchas deportivas y salones de evento
 
 <div align="center">
 
+<a href="https://www.linkedin.com/in/kevin-trujillo-2222521a8/">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
 <a href="mailto:struj3884@gmail.com">
   <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
