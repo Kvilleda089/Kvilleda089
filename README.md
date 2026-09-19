@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=220&section=header&text=Kevin%20Villeda&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20Guatemala&descAlignY=58&descSize=18" width="100%"/>
 
 <a href="https://github.com/Kvilleda089">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2C5364&center=true&vCenter=true&width=600&lines=Aprendiendo+el+ciclo+completo+del+software+%F0%9F%9A%80;Java+%7C+Spring+Boot+%7C+React+%7C+Angular+%7C+NestJS;Construyendo+proyectos+para+seguir+creciendo+%E2%98%95" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2C5364&center=true&vCenter=true&width=750&lines=Aprendiendo+el+ciclo+completo+del+software+%F0%9F%9A%80;Java+%7C+Spring+Boot+%7C+React+%7C+Angular+%7C+NestJS;Construyendo+proyectos+para+seguir+creciendo+%E2%98%95" alt="Typing SVG" />
 </a>
 
 </div>
