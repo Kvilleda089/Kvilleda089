@@ -12,12 +12,12 @@
 
 ## 👋 Sobre mí
 
-Soy **Kevin Eduardo Villeda Trujillo**, Ingeniero en Sistemas y desarrollador full stack, con base en la Ciudad de Guatemala. Me gusta construir proyectos propios donde pueda recorrer todo el ciclo de vida del software: desde el análisis y diseño, pasando por el desarrollo, hasta las pruebas y el despliegue.
+Soy **Kevin Villeda**, Ingeniero en Sistemas y desarrollador full stack, con base en la Ciudad de Guatemala. Me gusta construir proyectos propios donde pueda recorrer todo el ciclo de vida del software: desde el análisis y diseño, pasando por el desarrollo, hasta las pruebas y el despliegue.
 
 - 🎓 Ingeniero en Sistemas y Ciencias de la Comunicación — Universidad Mariano Gálvez
 - 🎓 Maestría en Informática — Universidad Mariano Gálvez
 - 🌱 Aprendiendo constantemente y mejorando con cada proyecto que construyo
-- 🛠️ Actualmente trabajando en un sitio de reservas de canchas y salones
+- 🛠️ Actualmente me cuento desarrollando proyectos personales, para mejorar mis habilidades, aprender nuevas cosas. 
 - 📫 Contáctame: **struj3884@gmail.com**
 
 <br/>
@@ -74,12 +74,11 @@ UiPath (RPA) · Creatio (BPM)
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Kvilleda089&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kvilleda089&layout=compact&theme=tokyonight&hide_border=true" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Kvilleda089&theme=tokyonight&hide_border=true" />
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Kvilleda089&theme=tokyonight&hide_border=true" />
+<img src="https://github-profile-trophy.vercel.app/?username=Kvilleda089&theme=tokyonight&no-frame=true&row=1&column=7" />
 
 </div>
 
