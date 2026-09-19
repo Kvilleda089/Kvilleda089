@@ -17,7 +17,6 @@ Soy **Kevin Villeda**, Ingeniero en Sistemas y desarrollador full stack, con bas
 - 🎓 Ingeniero en Sistemas y Ciencias de la Comunicación — Universidad Mariano Gálvez
 - 🎓 Maestría en Informática — Universidad Mariano Gálvez
 - 🌱 Aprendiendo constantemente y mejorando con cada proyecto que construyo
-- 🛠️ Actualmente me cuento desarrollando proyectos personales, para mejorar mis habilidades, aprender nuevas cosas. 
 - 📫 Contáctame: **struj3884@gmail.com**
 
 <br/>
@@ -76,9 +75,9 @@ UiPath (RPA) · Creatio (BPM)
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kvilleda089&theme=tokyonight&hide_border=true" />
 
-<br/>
+<br/><br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=Kvilleda089&theme=tokyonight&no-frame=true&row=1&column=7" />
+<img src="https://raw.githubusercontent.com/Kvilleda089/Kvilleda089/output/github-contribution-grid-snake.svg" alt="Gráfico de contribuciones animado" />
 
 </div>
 
