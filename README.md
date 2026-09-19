@@ -6,6 +6,8 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2C5364&center=true&vCenter=true&width=750&lines=Aprendiendo+el+ciclo+completo+del+software+%F0%9F%9A%80;Java+%7C+Spring+Boot+%7C+React+%7C+Angular+%7C+NestJS;Construyendo+proyectos+para+seguir+creciendo+%E2%98%95" alt="Typing SVG" />
 </a>
 
+<img src="https://komarev.com/ghpvc/?username=Kvilleda089&color=2c5364&style=flat&label=Visitas+al+perfil" alt="Contador de visitas" />
+
 </div>
 
 <br/>
@@ -62,6 +64,28 @@ Docker · Microservicios · Kafka
 GIT · SCRUM · UML/C4 · JUnit
 UiPath (RPA) · Creatio (BPM)
 ```
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## 🚀 Proyectos destacados
+
+<table align="center">
+<tr>
+<td width="100%">
+
+### 🏟️ Sistema de Reservas de Canchas y Salones
+
+Plataforma para gestionar reservas de dos canchas deportivas y salones de eventos. La pantalla principal muestra el listado de reservaciones con filtros por cliente, hora, fecha y estado.
+
+**Stack:** Backend en Docker, desplegado en Render · Base de datos en Neon (PostgreSQL)
+
+<a href="https://github.com/Kvilleda089/api-reservation">
+  <img src="https://img.shields.io/badge/Ver_repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
 
 </td>
 </tr>
