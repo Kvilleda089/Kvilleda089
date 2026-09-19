@@ -6,8 +6,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2C5364&center=true&vCenter=true&width=750&lines=Aprendiendo+el+ciclo+completo+del+software+%F0%9F%9A%80;Java+%7C+Spring+Boot+%7C+React+%7C+Angular+%7C+NestJS;Construyendo+proyectos+para+seguir+creciendo+%E2%98%95" alt="Typing SVG" />
 </a>
 
-
-
 </div>
 
 <br/>
@@ -93,6 +91,22 @@ Backend desplegado en Render · Base de datos en Neon (PostgreSQL)
 <a href="https://github.com/Kvilleda089/api-reservation">
   <img src="https://img.shields.io/badge/Ver_repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
 </a>
+
+<br/><br/>
+
+#### 🔧 Despliegue y flujo de trabajo
+
+El proyecto se despliega en **Render** a partir de un `Dockerfile`, con dos ramas conectadas a sus propios servicios (`quality-assurance` para pruebas y `master` para producción), compartiendo una base de datos en **Neon**.
+
+<p align="center">
+  <img src="assets/projects/reservation-api/ReservaFacil-Diagrama Despliegue.jpg" width="48%" alt="Configuración de despliegue en Render"/>
+  &nbsp;
+  <img src="assets/projects/reservation-api/flujo de trabajo.png" width="48%" alt="Flujo de trabajo: develop, quality-assurance y master"/>
+</p>
+
+<p align="center">
+  <sub><b>Izquierda:</b> configuración del despliegue en Render · <b>Derecha:</b> flujo de ramas de GitHub hacia Render y Neon</sub>
+</p>
 
 </td>
 </tr>
