@@ -108,6 +108,33 @@ El proyecto se despliega en **Render** a partir de un `Dockerfile`, con dos rama
   <sub><b>Izquierda:</b> configuración del despliegue en Render · <b>Derecha:</b> flujo de ramas de GitHub hacia Render y Neon</sub>
 </p>
 
+<br/>
+
+#### 🖥️ Frontend — ReservaFácil (reservation-web)
+
+Interfaz web construida con **Next.js (App Router)**, organizada por features (agenda, auth, dashboard, employee, statistics, client). Maneja el login y la sesión del empleado con `AuthContext`, y protege las rutas según el rol (`COURT_MANAGER`, `ADMINISTRATOR`, `SUPER_ADMINISTRATOR`) con un componente de ruta protegida. Se comunica con la API mediante un cliente Axios con interceptor que agrega el token automáticamente.
+
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+<img src="https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white" />
+
+<br/><br/>
+
+<a href="https://github.com/Kvilleda089/reservation-web">
+  <img src="https://img.shields.io/badge/Ver_repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<br/><br/>
+
+<p align="center">
+  <img src="assets/projects/reservation-web/arquitectura_frontend_reservation_web.svg" width="70%" alt="Arquitectura del frontend reservation-web"/>
+</p>
+
+<p align="center">
+  <sub>Arquitectura del frontend: organización por features, autenticación y rutas protegidas</sub>
+</p>
+
 </td>
 </tr>
 </table>
