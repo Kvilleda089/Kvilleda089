@@ -12,7 +12,7 @@
 
 ## 👋 Sobre mí
 
-Soy **Kevin Villeda**, Ingeniero en Sistemas y desarrollador full stack, con base en la Ciudad de Guatemala. Me gusta construir proyectos propios donde pueda recorrer todo el ciclo de vida del software: desde el análisis y diseño, pasando por el desarrollo, hasta las pruebas y el despliegue.
+Soy **Kevin Villeda**, Ingeniero en Sistemas y desarrollador full stack, con 4 años como desarrollador. Me gusta construir proyectos propios donde pueda recorrer todo el ciclo de vida del software: desde el análisis y diseño, pasando por el desarrollo, hasta las pruebas y el despliegue.
 
 - 🎓 Ingeniero en Sistemas y Ciencias de la Comunicación — Universidad Mariano Gálvez
 - 🎓 Maestría en Informática — Universidad Mariano Gálvez
@@ -25,7 +25,7 @@ Soy **Kevin Villeda**, Ingeniero en Sistemas y desarrollador full stack, con bas
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=react,angular,ts,js,reactnative,bootstrap,java,spring,nestjs,nodejs,cs,postgres,mysql,mongodb,docker,kafka,git,idea,vscode&theme=dark" />
+<img src="https://skillicons.dev/icons?i=react,angular,ts,js,reactnative,bootstrap,java,spring,nestjs,nodejs,py,fastapi,cs,postgres,mysql,mongodb,redis,docker,kafka,aws,git,idea,vscode&theme=dark" />
 
 </div>
 
@@ -44,7 +44,7 @@ JavaScript · React Native · Bootstrap
 **Backend**
 ```
 Java (Spring Boot, MicroProfile)
-NestJS / Node.js · C#
+NestJS / Node.js · Python (FastAPI) · C#
 ```
 
 </td>
@@ -53,13 +53,13 @@ NestJS / Node.js · C#
 **Bases de datos**
 ```
 PostgreSQL · MariaDB · MySQL
-Oracle · MongoDB
+Oracle · MongoDB · Redis
 ```
 
 **Herramientas & prácticas**
 ```
-Docker · Microservicios · Kafka
-GIT · SCRUM · UML/C4 · JUnit
+Docker · Microservicios · Kafka · BullMQ
+AWS S3 · GIT · SCRUM · UML/C4 · JUnit
 UiPath (RPA) · Creatio (BPM)
 ```
 
@@ -134,6 +134,110 @@ Interfaz web construida con **Next.js (App Router)**, organizada por features (a
 <p align="center">
   <sub>Arquitectura del frontend: organización por features, autenticación y rutas protegidas</sub>
 </p>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## 🧩 Servicios reutilizables
+
+Microservicios independientes del sistema de reservas. Cada uno se consume por **HTTP con API key**, así que cualquier otro proyecto (incluido el de reservas) puede integrarlos sin tocar su código.
+
+<table align="center">
+<tr>
+<td width="100%">
+
+### 🔔 Notify Hub
+
+Microservicio de notificaciones por **email y SMS**. Recibe la solicitud por HTTP, la guarda en base de datos, la encola y la envía en segundo plano con reintentos automáticos. Es **multi-tenant**: cada aplicación cliente es un *Project* con sus propias API keys.
+
+- **Idempotencia** con `Idempotency-Key`: reenviar la misma petición no duplica el mensaje.
+- **Envío asíncrono** con BullMQ + Redis: 3 intentos con backoff exponencial.
+- **Historial de intentos** (`DeliveryAttempt`) con proveedor, estado y error de cada envío.
+- **Reenvío manual** de notificaciones enviadas o fallidas.
+- **Proveedores intercambiables**: Resend (email) e Infobip o *mock* (SMS); agregar uno nuevo no toca el resto del código.
+- Autenticación por **API key** (clientes) y **token de administrador** (gestión de proyectos).
+
+<img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" />
+<img src="https://img.shields.io/badge/CQRS-4B0082?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/BullMQ-FF6B6B?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" />
+
+<br/><br/>
+
+<a href="https://github.com/Kvilleda089/notify-hub">
+  <img src="https://img.shields.io/badge/Ver_repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<br/><br/>
+
+#### 📐 Diagramas
+
+
+<p align="center">
+  <img src="assets/projects/notify-hub/arquitectura.svg" width="80%" alt="Arquitectura de Notify Hub"/>
+</p>
+<p align="center">
+  <sub>Arquitectura: API, cola con Redis, worker y proveedores de envío</sub>
+</p>
+
+
+<!-- PENDIENTE DIAGRAMA DESPLIEGUES-->
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table align="center">
+<tr>
+<td width="100%">
+
+### 🧾 PDF Receipts Manager
+
+Servicio centralizado que **convierte HTML en PDF**, le asigna un **número correlativo por proyecto**, lo guarda en **S3** y registra sus metadatos en **PostgreSQL**. Los proyectos consumidores envían el HTML ya armado y reciben el número de documento y una URL prefirmada para descargar el PDF.
+
+- Generación de PDF desde HTML con **WeasyPrint**.
+- Numeración independiente por proyecto (`PREFIJO-000001`, `PREFIJO-000002`, …).
+- Almacenamiento en **S3** (LocalStack en desarrollo) con URLs prefirmadas de 1 hora.
+- Autenticación por **API Key**; en base de datos solo se guarda el hash SHA-256.
+- **Aislamiento por proyecto**: un proyecto no puede consultar documentos de otro.
+- **Protección contra SSRF**: el HTML solo carga recursos `data:` o de dominios autorizados.
+- **CLI** para crear, listar y revocar API Keys.
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white" />
+<img src="https://img.shields.io/badge/LocalStack-000000?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" />
+
+<br/><br/>
+
+<a href="https://github.com/Kvilleda089/pdf-receipts-manager">
+  <img src="https://img.shields.io/badge/Ver_repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<br/><br/>
+
+#### 📐 Diagramas
+
+<p align="center">
+  <img src="assets/projects/pdf-receipts-manager/arquitectura.svg" width="80%" alt="Arquitectura de PDF Receipts Manager"/>
+</p>
+<p align="center">
+  <sub>Arquitectura: API, renderer, storage en S3 y base de datos</sub>
+</p>
+<!-- ESPACIO PARA DESPLIEGUE — PDF Receipts Manager (se integra más adelante) -->
 
 </td>
 </tr>
