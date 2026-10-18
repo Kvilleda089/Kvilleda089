@@ -181,7 +181,7 @@ Microservicio de notificaciones por **email y SMS**. Recibe la solicitud por HTT
 
 
 <p align="center">
-  <img src="assets/projects/notify-hub/arquitectura.svg" width="80%" alt="Arquitectura de Notify Hub"/>
+  <img src="assets/projects/notify-hub/arquitectura-notify-hub.svg" width="80%" alt="Arquitectura de Notify Hub"/>
 </p>
 <p align="center">
   <sub>Arquitectura: API, cola con Redis, worker y proveedores de envío</sub>
