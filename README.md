@@ -25,7 +25,7 @@ Soy **Kevin Villeda**, Ingeniero en Sistemas y desarrollador full stack, con 4 a
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=react,angular,ts,js,reactnative,bootstrap,java,spring,nestjs,nodejs,py,fastapi,cs,postgres,mysql,mongodb,redis,docker,kafka,aws,git,idea,vscode&theme=dark" />
+<img src="https://skillicons.dev/icons?i=react,angular,ts,js,reactnative,bootstrap,java,spring,nestjs,nodejs,py,fastapi,cs,postgres,mysql,mongodb,redis,docker,kafka,aws,gcp,git,idea,vscode&theme=dark" />
 
 </div>
 
@@ -59,7 +59,8 @@ Oracle · MongoDB · Redis
 **Herramientas & prácticas**
 ```
 Docker · Microservicios · Kafka · BullMQ
-AWS S3 · GIT · SCRUM · UML/C4 · JUnit
+AWS S3 · Google Cloud Run · GIT · SCRUM
+UML/C4 · JUnit
 UiPath (RPA) · Creatio (BPM)
 ```
 
@@ -167,6 +168,7 @@ Microservicio de notificaciones por **email y SMS**. Recibe la solicitud por HTT
 <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 <img src="https://img.shields.io/badge/BullMQ-FF6B6B?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Google_Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" />
 <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" />
 
 <br/><br/>
@@ -187,8 +189,32 @@ Microservicio de notificaciones por **email y SMS**. Recibe la solicitud por HTT
   <sub>Arquitectura: API, cola con Redis, worker y proveedores de envío</sub>
 </p>
 
+<br/>
 
-<!-- PENDIENTE DIAGRAMA DESPLIEGUES-->
+#### 🔧 Despliegue
+
+Notify Hub se despliega en **Google Cloud Run** (región `us-east1`) directamente desde el código fuente: **Cloud Build** construye la imagen con el `Dockerfile` y crea una nueva revisión del servicio en cada despliegue.
+
+- **Secretos** (base de datos, Redis, tokens y credenciales de Resend e Infobip) guardados en **Secret Manager** e inyectados como variables de entorno al iniciar la revisión; ninguna credencial viaja en el comando de despliegue ni en el repositorio.
+- **Base de datos** PostgreSQL en **Neon** y **Redis Cloud** para la cola de BullMQ.
+- **API y worker en el mismo proceso**, con una instancia fija (`min-instances 1`) y CPU siempre asignada (`no-cpu-throttling`), para que la cola siga procesándose aunque no lleguen peticiones.
+- **Proveedores externos**: Resend para email e Infobip para SMS.
+
+<p align="center">
+  <img src="assets/projects/notify-hub/notify_hub_diagrama_despliegue.svg" width="80%" alt="Diagrama de despliegue de Notify Hub en Google Cloud Run"/>
+</p>
+<p align="center">
+  <sub>Despliegue: apps cliente, Cloud Run, Secret Manager y servicios externos</sub>
+</p>
+
+<br/>
+
+<p align="center">
+  <img src="assets/projects/notify-hub/notify_hub_flujo_de_build.svg" width="80%" alt="Flujo de build y despliegue de Notify Hub"/>
+</p>
+<p align="center">
+  <sub>Flujo de despliegue: terminal, Cloud Build y nueva revisión en Cloud Run</sub>
+</p>
 
 </td>
 </tr>
